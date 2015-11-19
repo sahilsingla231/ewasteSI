@@ -1,6 +1,7 @@
 html,body{
 	background:url(../images/poly-green2.jpg);
 	background-size: cover;
+	overflow-x:hidden;
 }
 *{
 	-webkit-transition:all 0.25s ease-in;
@@ -104,7 +105,7 @@ a{
 /*tweets caro*/
 .tweets-caro{
 	position:fixed;
-	height:50px;
+	height:40px;
 	padding-bottom:10px;
 	overflow:hidden;
 	bottom:0;
@@ -115,7 +116,7 @@ a{
 }
 .tweets-caro .title{
 	color:#fff;
-	padding:5px;
+	padding:2px;
 	display:inline;
 	float:left;
 	-webkit-transform:skew(-20deg);
@@ -127,6 +128,44 @@ a{
 	margin-right: 50%;
 	cursor: pointer;
 	margin-bottom:50px;
+	-webkit-animation:down_anim 0.8s ease-in-out infinite;
+	-moz-animation:down_anim 0.8s ease-in-out infinite;
+	-o-animation:down_anim 0.8s ease-in-out infinite;
+	animation:down_anim 0.8s ease-in-out infinite;
+}
+@keyframes down_anim{
+	0%{
+		transform:translateY(0px);
+	}
+	25%{
+		transform:translateY(-5px);
+	}
+	50%{
+		transform:translateY(0px);
+	}
+	75%{
+		transform:translateY(5px);
+	}
+	100%{
+		transform:translateY(0px);
+	}
+}
+@-webkit-keyframes down_anim{
+	0%{
+		transform:translateY(0px);
+	}
+	25%{
+		transform:translateY(-5px);
+	}
+	50%{
+		transform:translateY(0px);
+	}
+	75%{
+		transform:translateY(5px);
+	}
+	100%{
+		transform:translateY(0px);
+	}
 }
 .down:hover{
 	color:rgba(0,0,0,0.8);
@@ -145,14 +184,9 @@ a{
 .sponsor img:hover{
 	opacity: 1;
 }
-/*social*/
-.social-icons li{
-	display: inline;
-	float:right;
-	margin-right:30px;
-}
 .school-form{
-	margin-top:30px;
+	margin-top:50px;
+	margin-bottom:50px;
 }
 .school-form input{
 	background: rgba(0, 0, 0, 0.698) none repeat scroll 0 0;
@@ -165,25 +199,75 @@ a{
     letter-spacing: 2.5px;
     margin-bottom: 10px;
     padding-left: 10px;
-    width: 100%;
+    width: 95%;
+}
+.school-form .submit-form{
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+	margin-top:30px;
+	width:200px;
+	height:80px;
+	background:rgba(0,0,0,0.7);
+	border:none;
+	font-size: 2.6rem;
+	font-family:'Walter Turncoat',sans-serif;
+	border:4px solid transparent;
+	border-radius:0;
+}
+.submit-form:hover{
+	background:rgba(0,0,0,0.8);
+	border:4px solid #fff;
 }
 .footer{
 	background:rgba(0,0,0,1);
 	color:#fff;
+	font-size: 1.5rem;
 	font-family: 'Walter Turncoat',sans-serif;
-	height:50px;
-	padding-top:20px;
+	height:40px;
+	margin-bottom:0;
+	padding-top:10px;
 	padding-left:10px;
+}
+.social-icons i{
+	font-size: 4rem;
+	text-shadow:0px 1px 3px #000;
+}
+.social-icons i.i{
+	color:#fff;
+}
+
+.social-icons i.t{
+	color:#4099ff;
+}
+.social-icons i.f{
+	color:#3a5795;
+}
+.social-icons i:hover{
+	color:rgb(215,67,69);
 }
 /*media queries*/
 @media all and (max-width: 640px) and (min-width: 320px) {
 .sponsor img{
-	margin-left:0;
+	margin-left:50px;
 	}
 	.nav-icon h4{
 		font-size:1.5rem !important;
 		line-height: 1.5;
 	}
+	.footer, .tweets-caro{
+		height:60px !important;
+	}
+	/*social*/
+.social-icons{
+	margin-left:25%;
+	margin-right:25%;
+}
+.social-icons li{
+	display: inline;
+	margin-right:10px;
+}
+
 }
 
 @media all and (min-width: 960px) {
@@ -197,5 +281,11 @@ a{
 		margin-left:200px;
 		margin-right:-100px;
 	}
+/*social*/
+.social-icons li{
+	display: inline;
+	float:right;
+	margin-right:30px;
+}
 
 }
